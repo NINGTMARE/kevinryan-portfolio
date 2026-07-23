@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Professional portfolio of Kevin Ryan Ebo'o - IT Specialist, Software Developer, and System Administrator.">
+  <title>Kevin Ryan Ebo'o | Portfolio</title>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-code"></i> KEVIN.DEV
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="active" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="#interests" data-i18n="nav_interests">Interests</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="themeToggleBtn" class="control-btn" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <div class="lang-switch">
+            <button class="lang-option active" data-lang="en">EN</button>
+            <span class="lang-separator">|</span>
+            <button class="lang-option" data-lang="fr">FR</button>
+          </div>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-welcome" data-i18n="hero_welcome">Welcome to my space</span>
+        <h1 class="hero-title">Kevin Ryan Ebo'o</h1>
+        <h2 class="hero-tagline" data-i18n="hero_tagline">IT Specialist & Software Developer</h2>
+        <p class="hero-description" data-i18n="hero_description">
+          Designing, building, and maintaining software applications, databases, and IT infrastructures. Specializing in
+          Web Development (PHP, JS), OOP (Java), and System Administration.
+        </p>
+        <div class="hero-ctas">
+          <a href="#experience" class="btn btn-primary">
+            <i class="fa-solid fa-briefcase"></i> <span data-i18n="hero_btn_work">View Work</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fa-solid fa-envelope"></i> <span data-i18n="hero_btn_contact">Contact Me</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar-wrapper">
+          <div class="avatar-inner">
+            <img src="assets/img/profile.jpg" alt="Kevin Ryan Ebo'o Profile Picture">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title" data-i18n="about_title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-i18n="about_p1">
+            I am a dedicated IT professional with strong skills in software development, system administration, and
+            database management. I am passionate about applying technical expertise to support IT operations, optimize
+            workflows, and build innovative solutions.
+          </p>
+          <p data-i18n="about_p2">
+            With a solid educational foundation in software engineering and practical experience from academic and
+            professional internships, I am equipped to handle diverse challenges ranging from full-stack web application
+            development to operating system deployments and hardware/software maintenance.
+          </p>
+          <div class="hero-ctas" style="margin-top: 1rem;">
+            <a href="mailto:ebookevinryan@gmail.com" class="btn btn-secondary">
+              <i class="fa-solid fa-paper-plane"></i> <span data-i18n="about_btn_hire">Hire Me</span>
+            </a>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">B.Tech</div>
+            <div class="stat-label" data-i18n="about_stat_btech_label">Bachelor of Technology (IUG)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">HND</div>
+            <div class="stat-label" data-i18n="about_stat_hnd_label">Software Engineering (IUG)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2+</div>
+            <div class="stat-label" data-i18n="about_stat_internships_label">Hands-on Internships</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label" data-i18n="about_stat_learning_label">Commitment & Learning Agile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title" data-i18n="skills_title">Technical Expertise</h2>
+      <div class="skills-container">
+        <!-- Tabs Buttons -->
+        <div class="skills-tabs">
+          <button class="tab-btn active" data-tab="swe" data-i18n="skills_tab_swe">Software Engineering</button>
+          <button class="tab-btn" data-tab="it" data-i18n="skills_tab_it">IT Support & Admin</button>
+          <button class="tab-btn" data-tab="langs" data-i18n="skills_tab_langs">Languages & Other</button>
+        </div>
+
+        <!-- Tabs Panels -->
+        <div class="skills-content">
+          <!-- Software Engineering Tab -->
+          <div class="skills-panel active" id="swe">
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_swe_principles_title">Software Dev Principles</h4>
+                <p data-i18n="skill_swe_principles_desc">OOP, design patterns & modular programming</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-code"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_swe_web_title">Web Development</h4>
+                <p data-i18n="skill_swe_web_desc">HTML, CSS, JavaScript, and PHP</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-brand fa-java"
+                  style="font-family: 'Font Awesome 6 Brands'; font-weight: 400;">&#xf4e4;</i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_swe_java_title">Java Programming</h4>
+                <p data-i18n="skill_swe_java_desc">Object-Oriented application logic</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-database"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_swe_db_title">Database Design</h4>
+                <p data-i18n="skill_swe_db_desc">SQL & database administration (MySQL)</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-bug-slash"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_swe_testing_title">Testing & Debugging</h4>
+                <p data-i18n="skill_swe_testing_desc">System analysis, test execution, troubleshooting</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-code-fork"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_swe_git_title">Version Control</h4>
+                <p data-i18n="skill_swe_git_desc">Git workspace management and flow control</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- IT Support & Admin Tab -->
+          <div class="skills-panel" id="it">
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-file-invoice"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_it_doc_title">Technical Documentation</h4>
+                <p data-i18n="skill_it_doc_desc">IT project reports and user guidelines</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_it_maint_title">Computer Maintenance</h4>
+                <p data-i18n="skill_it_maint_desc">Hardware diagnostics and components repair</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-window-restore"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_it_os_title">OS Deployment</h4>
+                <p data-i18n="skill_it_os_desc">Windows operating system install & setup</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-folder-open"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_it_record_title">Digital Record Keeping</h4>
+                <p data-i18n="skill_it_record_desc">Organizing data structures & archives</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-network-wired"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_it_coord_title">IT Task Coordination</h4>
+                <p data-i18n="skill_it_coord_desc">Coordinating tasks and assisting operations</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages & Other Tab -->
+          <div class="skills-panel" id="langs">
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-language"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_lang_fr_title">French</h4>
+                <p data-i18n="skill_lang_fr_desc">Native / Fluent proficiency</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-earth-americas"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_lang_en_title">English</h4>
+                <p data-i18n="skill_lang_en_desc">Intermediate / Professional level</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon-wrapper"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="skill-info">
+                <h4 data-i18n="skill_lang_edu_title">Education Background</h4>
+                <p data-i18n="skill_lang_edu_desc">GBHS Genie Militaire (Advanced Level)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title" data-i18n="experience_title">Work Experience</h2>
+      <div class="timeline">
+        <!-- C&G Creative Technology -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" data-modal="cg-modal">
+            <div class="timeline-header">
+              <div class="timeline-title">
+                <h3 data-i18n="exp_cg_title">Professional Internship</h3>
+                <div class="timeline-company"><i class="fa-solid fa-building"></i> <span data-i18n="exp_cg_company">C&G Creative Technology</span></div>
+              </div>
+              <span class="timeline-date" data-i18n="exp_cg_date">Oct 2025 - Mar 2026</span>
+            </div>
+            <p class="timeline-summary" data-i18n="exp_cg_summary">
+              Developed and optimized web applications and executed computer hardware diagnostics. Contributed directly
+              to the construction of a corporate E-learning web application.
+            </p>
+            <span class="read-more"><span data-i18n="exp_read_details">Read details</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- Ministry of Labor -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" data-modal="min-modal">
+            <div class="timeline-header">
+              <div class="timeline-title">
+                <h3 data-i18n="exp_min_title">Academic Internship</h3>
+                <div class="timeline-company"><i class="fa-solid fa-building-columns"></i> <span data-i18n="exp_min_company">Ministry of Labor & Social Security</span></div>
+              </div>
+              <span class="timeline-date" data-i18n="exp_min_date">Jul 2024 - Aug 2024</span>
+            </div>
+            <p class="timeline-summary" data-i18n="exp_min_summary">
+              Executed computer troubleshooting, system updates, and operating system setups. Designed and coded an
+              Attendance Management & Reporting web application.
+            </p>
+            <span class="read-more"><span data-i18n="exp_read_details">Read details</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title" data-i18n="projects_title">Featured Projects</h2>
+      <div class="projects-grid">
+        <!-- MedHunt Project -->
+        <div class="project-card" data-modal="medhunt-modal">
+          <div class="project-img-wrapper">
+            <img src="assets/img/medhunt.png" alt="MedHunt Mobile App Mockup">
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_medhunt_category">Android Mobile Application</span>
+            <h3>MedHunt</h3>
+            <p data-i18n="proj_medhunt_desc">Digital medical assistance platform and health resource finder built in Java and Android Studio.</p>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- Market-Service Project -->
+        <div class="project-card" data-modal="market-modal">
+          <div class="project-img-wrapper">
+            <img src="assets/img/market-service.png" alt="Market-Service Web App Mockup">
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_market_category">Full-Stack Web Application</span>
+            <h3>Market-Service</h3>
+            <p data-i18n="proj_market_desc">Cameroonian skill and service marketplace with mobile payment gateways and real-time chat.</p>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- LMS Project -->
+        <div class="project-card" data-modal="lms-modal">
+          <div class="project-img-wrapper">
+            <img src="assets/img/elearning.png" alt="LMS Learning Platform Mockup">
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_lms_category">Web Platform</span>
+            <h3 data-i18n="proj_lms_title">LMS Learning Platform</h3>
+            <p data-i18n="proj_lms_desc">E-learning platform with complete course catalogs, teacher management, and progress logs.</p>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests & Hobbies Section -->
+  <section id="interests">
+    <div class="container">
+      <h2 class="section-title" data-i18n="interests_title">Interests & Hobbies</h2>
+      <div class="interests-grid">
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3 data-i18n="interest_tech_title">Technology & Languages</h3>
+          <p data-i18n="interest_tech_desc">Constantly exploring new programming frameworks, libraries, and IT technologies.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3 data-i18n="interest_proj_title">Personal Projects</h3>
+          <p data-i18n="interest_proj_desc">Designing, building, and experimenting with custom software apps and scripting solutions.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fa-solid fa-trophy"></i></div>
+          <h3 data-i18n="interest_challenges_title">Coding Challenges</h3>
+          <p data-i18n="interest_challenges_desc">Participating in local hackathons, algorithmic puzzles, and collaborative coding tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-info-title">
+            <h3 data-i18n="contact_info_title">Let's collaborate</h3>
+            <p data-i18n="contact_info_desc">Have an interesting project, job opportunity, or support need? Feel free to reach out to me via any of
+              the methods listed here.</p>
+          </div>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-method-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-method-details">
+                <span data-i18n="contact_method_email">Email</span>
+                <a href="mailto:ebookevinryan@gmail.com">ebookevinryan@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-method-details">
+                <span data-i18n="contact_method_phone">Phone</span>
+                <a href="tel:+237656225092">+237 656 22 50 92</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-method-details">
+                <span data-i18n="contact_method_location">Location</span>
+                <p data-i18n="contact_method_location_val">Yaounde / Douala, Cameroon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name" data-i18n="contact_form_name">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Your Name" data-i18n="contact_form_name_placeholder" required>
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="contact_form_email">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="Your Email" data-i18n="contact_form_email_placeholder" required>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="contact_form_message">Message</label>
+            <textarea id="message" class="form-control" placeholder="Your Message" data-i18n="contact_form_message_placeholder" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">
+            <i class="fa-solid fa-paper-plane"></i> <span data-i18n="contact_form_submit">Send Message</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals for Internships details -->
+
+  <!-- C&G Creative Technology Modal -->
+  <div class="modal-overlay" id="cg-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="exp_cg_date">Oct 2025 - Mar 2026</span>
+          <h2 data-i18n="exp_cg_title">Professional Internship</h2>
+          <div class="modal-company" data-i18n="exp_cg_company">C&G Creative Technology</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_responsibilities">Overview & Responsibilities</h4>
+            <p data-i18n="modal_cg_overview">Worked in a dynamic environment at C&G Creative Technology, focusing on full-stack web application
+              development and tech support operations.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_accomplishments">Key Accomplishments</h4>
+            <ul>
+              <li data-i18n="modal_cg_bullet1">Participated in building a custom E-learning Web Application, developing critical frontend modules and
+                styling layouts.</li>
+              <li data-i18n="modal_cg_bullet2">Handled hardware maintenance, system configuration, and software assembly for client workstations.</li>
+              <li data-i18n="modal_cg_bullet3">Collaborated with senior developers to verify API connections and troubleshoot responsive design
+                patterns.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_mockup">Project Visual Mockup</h4>
+            <img src="assets/img/elearning.png" alt="E-learning Dashboard Mockup"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech">Tech Stack Utilized</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Hardware Maintenance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ministry of Labor Modal -->
+  <div class="modal-overlay" id="min-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="exp_min_date">Jul 2024 - Aug 2024</span>
+          <h2 data-i18n="exp_min_title">Academic Internship</h2>
+          <div class="modal-company" data-i18n="exp_min_company">Ministry of Labor & Social Security</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_responsibilities">Overview & Responsibilities</h4>
+            <p data-i18n="modal_min_overview">Assisted the IT department at the Ministry of Labor and Social Security, gaining practical hands-on
+              experience in corporate IT support and project development.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_accomplishments">Key Accomplishments</h4>
+            <ul>
+              <li data-i18n="modal_min_bullet1">Designed and built an <strong>Attendance Management and Reporting System</strong> for the HND thesis
+                project, boosting workflow automation.</li>
+              <li data-i18n="modal_min_bullet2">Performed installation, updates, and optimization of office software suites and operating systems.</li>
+              <li data-i18n="modal_min_bullet3">Troubleshooted network connectivity and repaired desktop components.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_mockup">Project Visual Mockup</h4>
+            <img src="assets/img/attendance.png" alt="Attendance Management Mockup"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech">Tech Stack Utilized</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">HTML5 / CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">OS Deployment</span>
+              <span class="tech-tag">System Troubleshooting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MedHunt Modal -->
+  <div class="modal-overlay" id="medhunt-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="modal_title_featured">Featured Project</span>
+          <h2>MedHunt Mobile App</h2>
+          <div class="modal-company" data-i18n="proj_medhunt_category">Android Application</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_overview">Overview & Purpose</h4>
+            <p data-i18n="modal_medhunt_overview">MedHunt is a digital health assistant mobile application. It helps users find medical facilities, contact
+              emergency services, and keep track of essential healthcare information.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_features">Key Features</h4>
+            <ul>
+              <li data-i18n="modal_medhunt_bullet1">Real-time database integration for local doctor/pharmacy lookups.</li>
+              <li data-i18n="modal_medhunt_bullet2">Push notifications and alerts for health appointments.</li>
+              <li data-i18n="modal_medhunt_bullet3">Sleek, responsive native user interface designed for readability.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
+            <img src="assets/img/medhunt.png" alt="MedHunt Android App Screenshot"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Android Studio</span>
+              <span class="tech-tag">FireBase</span>
+              <span class="tech-tag">Android Notification Service</span>
+              <span class="tech-tag">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Market-Service Modal -->
+  <div class="modal-overlay" id="market-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="modal_title_featured">Featured Project</span>
+          <h2>Market-Service</h2>
+          <div class="modal-company" data-i18n="proj_market_category">Freelance & Skill Marketplace</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_overview">Overview & Purpose</h4>
+            <p data-i18n="modal_market_overview">A web platform connecting local service providers and freelancers with customers in Cameroon. Solves the
+              trust and transaction gap in the local gig economy.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_features">Key Features</h4>
+            <ul>
+              <li data-i18n="modal_market_bullet1">Mobile payments gateway integration using <strong>CamPay Webhooks</strong> (supporting MTN Mobile Money & Orange Money).</li>
+              <li data-i18n="modal_market_bullet2">User verification, OAuth logins (Google login), provider reviews, and search filters.</li>
+              <li data-i18n="modal_market_bullet3">Real-time chat and communication systems for contract agreements.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
+            <img src="assets/img/market-service.png" alt="Market-Service Platform Screenshot"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">CamPay Webhook API</span>
+              <span class="tech-tag">JavaScript / AJAX</span>
+              <span class="tech-tag">OAuth 2.0</span>
+              <span class="tech-tag">HTML5 / CSS3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LMS Modal -->
+  <div class="modal-overlay" id="lms-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="modal_title_featured">Featured Project</span>
+          <h2 data-i18n="proj_lms_title">LMS Platform</h2>
+          <div class="modal-company" data-i18n="proj_lms_category">Learning Management System</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_overview">Overview & Purpose</h4>
+            <p data-i18n="modal_lms_overview">A full-featured web-based portal to host and manage academic courses, student progress tracker, and
+              instructor dashboards.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_features">Key Features</h4>
+            <ul>
+              <li data-i18n="modal_lms_bullet1">Roles and authorization management for Students, Instructors, and Admin portals.</li>
+              <li data-i18n="modal_lms_bullet2">Course catalog, video tutorials streaming, and interactive quizzes logs.</li>
+              <li data-i18n="modal_lms_bullet3">Automatic report generation and grading lists.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
+            <img src="assets/img/elearning.png" alt="LMS Course Portal Screenshot"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Bootstrap / CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Session Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <p class="footer-text" data-i18n="footer_text">&copy; 2026 Kevin Ryan Ebo'o. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="mailto:ebookevinryan@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
+        <li><a href="tel:+237656225092" title="Phone"><i class="fa-solid fa-phone"></i></a></li>
+        <li><a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Translation Dictionary -->
+  <script src="js/translations.js"></script>
+  <!-- Interactive JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
