@@ -16,6 +16,9 @@
 </head>
 
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div id="scrollProgressBar" class="scroll-progress-bar"></div>
+
   <!-- Ambient background glow elements -->
   <div class="bg-glow-1"></div>
   <div class="bg-glow-2"></div>
@@ -38,6 +41,9 @@
         </ul>
 
         <div class="nav-actions">
+          <a href="assets/docs/Kevin_Ryan_CV.pdf" class="btn-cv-nav" target="_blank" download title="Download CV">
+            <i class="fa-solid fa-file-arrow-down"></i> <span class="cv-nav-text" data-i18n="nav_cv">CV</span>
+          </a>
           <button id="themeToggleBtn" class="control-btn" aria-label="Toggle Theme">
             <i class="fa-solid fa-moon"></i>
           </button>
@@ -61,7 +67,7 @@
       <div class="hero-content">
         <span class="hero-welcome" data-i18n="hero_welcome">Welcome to my space</span>
         <h1 class="hero-title">Kevin Ryan Ebo'o</h1>
-        <h2 class="hero-tagline" data-i18n="hero_tagline">IT Specialist & Software Developer</h2>
+        <h2 class="hero-tagline"><span id="typingRole" class="typing-role">IT Specialist & Software Developer</span><span class="typing-cursor">|</span></h2>
         <p class="hero-description" data-i18n="hero_description">
           Designing, building, and maintaining software applications, databases, and IT infrastructures. Specializing in
           Web Development (PHP, JS), OOP (Java), and System Administration.
@@ -72,6 +78,9 @@
           </a>
           <a href="#contact" class="btn btn-secondary">
             <i class="fa-solid fa-envelope"></i> <span data-i18n="hero_btn_contact">Contact Me</span>
+          </a>
+          <a href="assets/docs/Kevin_Ryan_CV.pdf" class="btn btn-outline" target="_blank" download>
+            <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="hero_btn_cv">Download CV</span>
           </a>
         </div>
       </div>
@@ -307,43 +316,181 @@
   <!-- Projects Section -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title" data-i18n="projects_title">Featured Projects</h2>
-      <div class="projects-grid">
-        <!-- MedHunt Project -->
-        <div class="project-card" data-modal="medhunt-modal">
+      <div class="projects-header-wrapper">
+        <h2 class="section-title" data-i18n="projects_title">Featured Projects</h2>
+        <p class="projects-subtitle" data-i18n="projects_subtitle">
+          Explore my recent software engineering and IT infrastructure projects across web, mobile, and enterprise domains.
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="projects-filter-bar">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fa-solid fa-layer-group"></i> <span data-i18n="proj_filter_all">All Projects</span>
+          </button>
+          <button class="filter-btn" data-filter="web">
+            <i class="fa-solid fa-globe"></i> <span data-i18n="proj_filter_web">Full-Stack Web</span>
+          </button>
+          <button class="filter-btn" data-filter="mobile">
+            <i class="fa-solid fa-mobile-screen-button"></i> <span data-i18n="proj_filter_mobile">Mobile Apps</span>
+          </button>
+          <button class="filter-btn" data-filter="hr">
+            <i class="fa-solid fa-building-user"></i> <span data-i18n="proj_filter_hr">Enterprise & HR</span>
+          </button>
+          <button class="filter-btn" data-filter="edtech">
+            <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="proj_filter_edtech">Education & LMS</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Project 1: LMS E-Learning Platform -->
+        <div class="project-card" data-modal="lms-modal" data-category="edtech web">
+          <div class="project-img-wrapper stroll-wrapper">
+            <div class="stroll-badge"><i class="fa-solid fa-arrows-left-right"></i> Strolling Showcase</div>
+            <div class="stroll-track">
+              <img src="assets/img/elearning.png" alt="EduVibe LMS Platform Landing">
+              <img src="assets/img/analytics.png" alt="EduVibe Analytics & Grades">
+              <img src="assets/img/student.png" alt="EduVibe Interactive Learning">
+              <img src="assets/img/admin1.png" alt="EduVibe Instructor Panel">
+              <img src="assets/img/instructor.png" alt="EduVibe Dashboard">
+              <!-- Duplicated set for seamless loop -->
+              <img src="assets/img/elearning.png" alt="EduVibe LMS Platform Landing">
+              <img src="assets/img/analytics.png" alt="EduVibe Analytics & Grades">
+              <img src="assets/img/student.png" alt="EduVibe Interactive Learning">
+              <img src="assets/img/admin1.png" alt="EduVibe Instructor Panel">
+              <img src="assets/img/instructor.png" alt="EduVibe Dashboard">
+            </div>
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_lms_category">Web Platform & EdTech</span>
+            <h3 data-i18n="proj_lms_title">EduVibe LMS Platform</h3>
+            <p data-i18n="proj_lms_desc">E-learning platform with course catalogs, interactive video player, instructor dashboards, automated certificates, and Campay Mobile Money checkout.</p>
+            <div class="project-tech-pills">
+              <span class="project-tech-pill">PHP</span>
+              <span class="project-tech-pill">MySQL</span>
+              <span class="project-tech-pill">Campay MoMo</span>
+              <span class="project-tech-pill">FPDF</span>
+            </div>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 2: Market-Service Cameroon -->
+        <div class="project-card" data-modal="market-modal" data-category="web">
           <div class="project-img-wrapper">
+            <span class="project-badge-pill"><i class="fa-solid fa-handshake"></i> Verified</span>
+            <img src="assets/img/market-service.png" alt="Market-Service Platform Mockup">
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_market_category">Full-Stack Marketplace</span>
+            <h3 data-i18n="proj_market_title">Market-Service Cameroon</h3>
+            <p data-i18n="proj_market_desc">On-demand freelance and artisan services marketplace featuring geolocation search, Orange/MTN Mobile Money webhooks, and live messaging.</p>
+            <div class="project-tech-pills">
+              <span class="project-tech-pill">PHP</span>
+              <span class="project-tech-pill">MySQL</span>
+              <span class="project-tech-pill">Google OAuth</span>
+              <span class="project-tech-pill">CamPay Webhook</span>
+            </div>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 3: Smart Attendance & Reporting System -->
+        <div class="project-card" data-modal="attendance-modal" data-category="hr web">
+          <div class="project-img-wrapper">
+            <span class="project-badge-pill"><i class="fa-solid fa-clipboard-user"></i> Ministry Project</span>
+            <img src="assets/img/attendance.png" alt="Attendance System Mockup">
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_attendance_category">Enterprise HR Automation</span>
+            <h3 data-i18n="proj_attendance_title">Smart Attendance & Reporting</h3>
+            <p data-i18n="proj_attendance_desc">Workforce attendance tracking system built for the Ministry of Labor with department hierarchies, employee logs, and automated PDF/CSV report generation.</p>
+            <div class="project-tech-pills">
+              <span class="project-tech-pill">PHP</span>
+              <span class="project-tech-pill">MySQL</span>
+              <span class="project-tech-pill">FPDF</span>
+              <span class="project-tech-pill">CSV Export</span>
+            </div>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 4: HR Sanctions & Employee Conduct System -->
+        <div class="project-card" data-modal="sanction-modal" data-category="hr web">
+          <div class="project-img-wrapper">
+            <span class="project-badge-pill"><i class="fa-solid fa-gavel"></i> Compliance</span>
+            <img src="assets/img/hr_sanction.png" alt="HR Sanctions Management Dashboard">
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_sanction_category">Enterprise HR & Compliance</span>
+            <h3 data-i18n="proj_sanction_title">HR Sanctions & Conduct Management</h3>
+            <p data-i18n="proj_sanction_desc">Disciplinary action system with role-based access for Admin, Managers, and Employees, tracking sanction lifecycles, hearings, and appeals.</p>
+            <div class="project-tech-pills">
+              <span class="project-tech-pill">PHP</span>
+              <span class="project-tech-pill">MySQL</span>
+              <span class="project-tech-pill">RBAC Security</span>
+              <span class="project-tech-pill">Audit Trail</span>
+            </div>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 5:  HND Examination Hub -->
+        <div class="project-card" data-modal="tiam-modal" data-category="edtech web">
+          <div class="project-img-wrapper">
+            <span class="project-badge-pill"><i class="fa-solid fa-book-open-reader"></i> HND Portal</span>
+            <img src="assets/img/tiam_hnd.png" alt=" HND Examination Hub Mockup">
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_tiam_category">EdTech & Exam Hub</span>
+            <h3 data-i18n="proj_tiam_title"> HND Examination Hub</h3>
+            <p data-i18n="proj_tiam_desc">National examination preparation portal featuring past papers catalog, specialty revision notes, timed quizzes with auto-scoring, and student forums.</p>
+            <div class="project-tech-pills">
+              <span class="project-tech-pill">PHP PDO</span>
+              <span class="project-tech-pill">MySQL</span>
+              <span class="project-tech-pill">Quiz Engine</span>
+              <span class="project-tech-pill">PDF Archive</span>
+            </div>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 6: TourExplore Cameroon Mobile & Web App -->
+        <div class="project-card" data-modal="tour-modal" data-category="mobile web">
+          <div class="project-img-wrapper">
+            <span class="project-badge-pill"><i class="fa-brands fa-whatsapp"></i> Instant Order</span>
+            <img src="assets/img/tourexplore.png" alt="TourExplore Mobile App Mockup">
+          </div>
+          <div class="project-info-content">
+            <span class="project-category" data-i18n="proj_tour_category">Cross-Platform Mobile App</span>
+            <h3 data-i18n="proj_tour_title">TourExplore - Cameroon Tourism</h3>
+            <p data-i18n="proj_tour_desc">Hybrid travel mobile app built with Capacitor and Firebase featuring offline guides, one-click WhatsApp instant ordering, and Mobile Money billing.</p>
+            <div class="project-tech-pills">
+              <span class="project-tech-pill">Capacitor</span>
+              <span class="project-tech-pill">Firebase</span>
+              <span class="project-tech-pill">WhatsApp API</span>
+              <span class="project-tech-pill">MTN/Orange MoMo</span>
+            </div>
+            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 7: MedHunt Health Assistant -->
+        <div class="project-card" data-modal="medhunt-modal" data-category="mobile">
+          <div class="project-img-wrapper">
+            <span class="project-badge-pill"><i class="fa-solid fa-heart-pulse"></i> Healthcare</span>
             <img src="assets/img/medhunt.png" alt="MedHunt Mobile App Mockup">
           </div>
           <div class="project-info-content">
             <span class="project-category" data-i18n="proj_medhunt_category">Android Mobile Application</span>
-            <h3>MedHunt</h3>
-            <p data-i18n="proj_medhunt_desc">Digital medical assistance platform and health resource finder built in Java and Android Studio.</p>
-            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
-          </div>
-        </div>
-
-        <!-- Market-Service Project -->
-        <div class="project-card" data-modal="market-modal">
-          <div class="project-img-wrapper">
-            <img src="assets/img/market-service.png" alt="Market-Service Web App Mockup">
-          </div>
-          <div class="project-info-content">
-            <span class="project-category" data-i18n="proj_market_category">Full-Stack Web Application</span>
-            <h3>Market-Service</h3>
-            <p data-i18n="proj_market_desc">Cameroonian skill and service marketplace with mobile payment gateways and real-time chat.</p>
-            <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
-          </div>
-        </div>
-
-        <!-- LMS Project -->
-        <div class="project-card" data-modal="lms-modal">
-          <div class="project-img-wrapper">
-            <img src="assets/img/elearning.png" alt="LMS Learning Platform Mockup">
-          </div>
-          <div class="project-info-content">
-            <span class="project-category" data-i18n="proj_lms_category">Web Platform</span>
-            <h3 data-i18n="proj_lms_title">LMS Learning Platform</h3>
-            <p data-i18n="proj_lms_desc">E-learning platform with complete course catalogs, teacher management, and progress logs.</p>
+            <h3 data-i18n="proj_medhunt_title">MedHunt Health Assistant</h3>
+            <p data-i18n="proj_medhunt_desc">Digital medical assistance platform and pharmacy locator built in Java & Android Studio with Firebase and interactive medication search.</p>
+            <div class="project-tech-pills">
+              <span class="project-tech-pill">Java</span>
+              <span class="project-tech-pill">Android Studio</span>
+              <span class="project-tech-pill">Firebase</span>
+              <span class="project-tech-pill">Maps API</span>
+            </div>
             <span class="read-more"><span data-i18n="proj_learn_more">Learn more</span> <i class="fa-solid fa-arrow-right-long"></i></span>
           </div>
         </div>
@@ -412,17 +559,19 @@
         </div>
 
         <form class="contact-form" id="contactForm">
+          <input type="hidden" name="access_key" value="7bf4ccc5-a3a1-45ab-9ef4-ec3ff1620575">
+          <input type="hidden" name="from_name" value="Portfolio Contact Form">
           <div class="form-group">
             <label for="name" data-i18n="contact_form_name">Name</label>
-            <input type="text" id="name" class="form-control" placeholder="Your Name" data-i18n="contact_form_name_placeholder" required>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" data-i18n="contact_form_name_placeholder" required>
           </div>
           <div class="form-group">
             <label for="email" data-i18n="contact_form_email">Email</label>
-            <input type="email" id="email" class="form-control" placeholder="Your Email" data-i18n="contact_form_email_placeholder" required>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" data-i18n="contact_form_email_placeholder" required>
           </div>
           <div class="form-group">
             <label for="message" data-i18n="contact_form_message">Message</label>
-            <textarea id="message" class="form-control" placeholder="Your Message" data-i18n="contact_form_message_placeholder" required></textarea>
+            <textarea id="message" name="message" class="form-control" placeholder="Your Message" data-i18n="contact_form_message_placeholder" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary submit-btn">
             <i class="fa-solid fa-paper-plane"></i> <span data-i18n="contact_form_submit">Send Message</span>
@@ -534,13 +683,13 @@
       <div class="modal-content">
         <div class="modal-header-info">
           <span class="modal-date" data-i18n="modal_title_featured">Featured Project</span>
-          <h2>MedHunt Mobile App</h2>
+          <h2 data-i18n="proj_lms_title">MedHunt Mobile App</h2>
           <div class="modal-company" data-i18n="proj_medhunt_category">Android Application</div>
         </div>
         <div class="modal-body">
           <div>
             <h4 data-i18n="modal_section_overview">Overview & Purpose</h4>
-            <p data-i18n="modal_medhunt_overview">MedHunt is a digital health assistant mobile application. It helps users find medical facilities, contact
+            <p data-i18n="modal_lms_overview">MedHunt is a digital health assistant mobile application. It helps users find medical facilities, contact
               emergency services, and keep track of essential healthcare information.</p>
           </div>
           <div>
@@ -551,10 +700,125 @@
               <li data-i18n="modal_medhunt_bullet3">Sleek, responsive native user interface designed for readability.</li>
             </ul>
           </div>
-          <div>
-            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
-            <img src="assets/img/medhunt.png" alt="MedHunt Android App Screenshot"
-              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          <div class="modal-gallery-wrapper">
+            <div class="gallery-header">
+              <h4 data-i18n="modal_section_screenshot"><i class="fa-solid fa-images"></i> Project Showcase Gallery</h4>
+              <div class="gallery-actions">
+                <button class="gallery-action-btn" id="lms-autoplay-btn" type="button" title="Toggle Auto Strolling">
+                  <i class="fa-solid fa-pause"></i> Auto-Scroll
+                </button>
+              </div>
+            </div>
+
+            <!-- View Filter Tabs -->
+            <div class="gallery-tabs">
+              <button class="gallery-tab-btn active" type="button" data-filter="all"><i class="fa-solid fa-layer-group"></i> All Views</button>
+              <button class="gallery-tab-btn" type="button" data-filter="overview"><i class="fa-solid fa-globe"></i> Overview</button>
+              <button class="gallery-tab-btn" type="button" data-filter="dashboard"><i class="fa-solid fa-graduation-cap"></i> Student Portal</button>
+              <button class="gallery-tab-btn" type="button" data-filter="admin"><i class="fa-solid fa-user-shield"></i> Teacher & Admin</button>
+              <button class="gallery-tab-btn" type="button" data-filter="analytics"><i class="fa-solid fa-certificate"></i> Certificates</button>
+            </div>
+
+            <!-- Main Slide Viewport -->
+            <div class="gallery-viewport">
+              <button class="gallery-nav-btn prev" id="lms-prev-btn" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gallery-nav-btn next" id="lms-next-btn" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+
+              <div class="gallery-slides-container" id="lms-slides">
+                <!-- Slide 1 -->
+                <div class="gallery-slide active" data-category="overview">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets/img/medhunt.png" alt="MedHunt Android App Screenshot">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>App logo that tell the user what the will see in the application</h5>
+                    <p></p>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="gallery-slide" data-category="dashboard">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets\img\verify.png" alt="Admin verification pages">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Admin verification pages</h5>
+                    <p>administrator application the well in the trust of real pharmacies for a better user of the application.</p>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="gallery-slide" data-category="dashboard">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets\img\search.png" alt="interactive search page">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Interactive logation and search pharmacies</h5>
+                    <p>Real-time locator pharmacies with the nearest location</p>
+                  </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="gallery-slide" data-category="admin">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets\img\medecine.png" alt="Search medicine">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Find you medicine with the nearest location</h5>
+                    <p>make research and compare medicine prise and filter with the nearest location.</p>
+                  </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="gallery-slide" data-category="analytics">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets\img\pharmacy.png" alt="pharmacy verification">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Pharmacy verification</h5>
+                    <p>Import the licence number and certificate to permet the pharmacy to access the application.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fullscreen Expand Button -->
+              <button class="gallery-expand-btn" id="lms-expand-btn" type="button" title="View Fullscreen Lightbox">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Thumbnails Strip -->
+            <div class="gallery-thumbnails-strip" id="lms-thumbnails">
+              <div class="thumb-item active" data-index="0">
+                <img src="assets/img/medhunt.png" alt="Thumb 1">
+              </div>
+              <div class="thumb-item" data-index="1">
+                <img src="assets\img\verify.png" alt="Thumb 2">
+              </div>
+              <div class="thumb-item" data-index="2">
+                <img src="assets\img\search.png" alt="Thumb 3">
+              </div>
+              <div class="thumb-item" data-index="3">
+                <img src="assets\img\medecine.png" alt="Thumb 4">
+              </div>
+              <div class="thumb-item" data-index="4">
+                <img src="assets\img\pharmacy.png" alt="Thumb 5">
+              </div>
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="gallery-dots" id="lms-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+              <span class="dot" data-index="4"></span>
+            </div>
           </div>
           <div>
             <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
@@ -570,6 +834,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- Market-Service Modal -->
   <div class="modal-overlay" id="market-modal">
@@ -640,10 +905,125 @@
               <li data-i18n="modal_lms_bullet3">Automatic report generation and grading lists.</li>
             </ul>
           </div>
-          <div>
-            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
-            <img src="assets/img/elearning.png" alt="LMS Course Portal Screenshot"
-              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          <div class="modal-gallery-wrapper">
+            <div class="gallery-header">
+              <h4 data-i18n="modal_section_screenshot"><i class="fa-solid fa-images"></i> Project Showcase Gallery</h4>
+              <div class="gallery-actions">
+                <button class="gallery-action-btn" id="lms-autoplay-btn" type="button" title="Toggle Auto Strolling">
+                  <i class="fa-solid fa-pause"></i> Auto-Scroll
+                </button>
+              </div>
+            </div>
+
+            <!-- View Filter Tabs -->
+            <div class="gallery-tabs">
+              <button class="gallery-tab-btn active" type="button" data-filter="all"><i class="fa-solid fa-layer-group"></i> All Views</button>
+              <button class="gallery-tab-btn" type="button" data-filter="overview"><i class="fa-solid fa-globe"></i> Overview</button>
+              <button class="gallery-tab-btn" type="button" data-filter="dashboard"><i class="fa-solid fa-graduation-cap"></i> Student Portal</button>
+              <button class="gallery-tab-btn" type="button" data-filter="admin"><i class="fa-solid fa-user-shield"></i> Teacher & Admin</button>
+              <button class="gallery-tab-btn" type="button" data-filter="analytics"><i class="fa-solid fa-certificate"></i> Certificates</button>
+            </div>
+
+            <!-- Main Slide Viewport -->
+            <div class="gallery-viewport">
+              <button class="gallery-nav-btn prev" id="lms-prev-btn" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gallery-nav-btn next" id="lms-next-btn" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+
+              <div class="gallery-slides-container" id="lms-slides">
+                <!-- Slide 1 -->
+                <div class="gallery-slide active" data-category="overview">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets/img/elearning.png" alt="LMS Course Catalog & Landing Portal">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Course Catalog & Public Landing Portal</h5>
+                    <p>Clean responsive course catalog with filterable search, category badges, and quick enrollment.</p>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="gallery-slide" data-category="dashboard">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets/img/instructor.png" alt="Student Learning Dashboard & Video Player">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Student Learning Dashboard & Player</h5>
+                    <p>Interactive student learning hub showing course progress trackers, video lessons, and quiz modules.</p>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="gallery-slide" data-category="dashboard">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets/img/student.png" alt="Interactive Student Quiz & Lessons View">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Interactive Lessons & Progress Logs</h5>
+                    <p>Real-time progress logging, chapter completions, and interactive self-assessment quizzes.</p>
+                  </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="gallery-slide" data-category="admin">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets/img/admin1.png" alt="Teacher & Instructor Management Panel">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Teacher & Instructor Management Portal</h5>
+                    <p>Comprehensive admin backend for role-based authorization, course creation, and student tracking.</p>
+                  </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="gallery-slide" data-category="analytics">
+                  <div class="slide-image-box vertical-scroll-preview">
+                    <img src="assets/img/analytics.png" alt="Grade Reports & Certificate Generation">
+                    <div class="vertical-scroll-hint"><i class="fa-solid fa-arrows-up-down"></i> Hover to stroll page</div>
+                  </div>
+                  <div class="slide-caption">
+                    <h5>Grade Reports & Certificate Generation</h5>
+                    <p>Automated grading reports, analytical breakdown of class performance, and digital diplomas.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fullscreen Expand Button -->
+              <button class="gallery-expand-btn" id="lms-expand-btn" type="button" title="View Fullscreen Lightbox">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Thumbnails Strip -->
+            <div class="gallery-thumbnails-strip" id="lms-thumbnails">
+              <div class="thumb-item active" data-index="0">
+                <img src="assets/img/elearning.png" alt="Thumb 1">
+              </div>
+              <div class="thumb-item" data-index="1">
+                <img src="assets/img/instructor.png" alt="Thumb 2">
+              </div>
+              <div class="thumb-item" data-index="2">
+                <img src="assets/img/student.png" alt="Thumb 3">
+              </div>
+              <div class="thumb-item" data-index="3">
+                <img src="assets/img/admin1.png" alt="Thumb 4">
+              </div>
+              <div class="thumb-item" data-index="4">
+                <img src="assets/img/analytics.png" alt="Thumb 5">
+              </div>
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="gallery-dots" id="lms-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+              <span class="dot" data-index="4"></span>
+            </div>
           </div>
           <div>
             <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
@@ -653,6 +1033,184 @@
               <span class="tech-tag">Bootstrap / CSS</span>
               <span class="tech-tag">JavaScript</span>
               <span class="tech-tag">Session Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attendance Management Modal -->
+  <div class="modal-overlay" id="attendance-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="modal_title_featured">Featured Project</span>
+          <h2 data-i18n="proj_attendance_title">Smart Attendance & Reporting</h2>
+          <div class="modal-company" data-i18n="proj_attendance_category">Enterprise HR Automation</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_overview">Overview & Purpose</h4>
+            <p data-i18n="modal_attendance_overview">Enterprise employee attendance and accountability web portal conceived and engineered during an internship at the Ministry of Labor and Social Security, serving as the practical capstone for the Software Engineering HND diploma.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_features">Key Features</h4>
+            <ul>
+              <li data-i18n="modal_attendance_bullet1">Automated clock-in/out tracking and attendance audit logs with real-time department statistics.</li>
+              <li data-i18n="modal_attendance_bullet2">Configurable PDF report engine built with FPDF and instant CSV spreadsheet data exports.</li>
+              <li data-i18n="modal_attendance_bullet3">Hierarchical management structure: department admins, managers, and member management workflows.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
+            <img src="assets/img/attendance.png" alt="Attendance Management Dashboard Screenshot"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">FPDF</span>
+              <span class="tech-tag">CSV Data Export</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML5 / CSS3</span>
+              <span class="tech-tag">Apache</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HR Sanctions Modal -->
+  <div class="modal-overlay" id="sanction-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="modal_title_featured">Featured Project</span>
+          <h2 data-i18n="proj_sanction_title">HR Sanctions & Conduct Management</h2>
+          <div class="modal-company" data-i18n="proj_sanction_category">Enterprise HR & Compliance</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_overview">Overview & Purpose</h4>
+            <p data-i18n="modal_sanction_overview">A specialized human resource compliance and disciplinary tracking portal that digitizes the entire lifecycle of workplace infractions, hearing notices, penalty escalations, and employee appeals.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_features">Key Features</h4>
+            <ul>
+              <li data-i18n="modal_sanction_bullet1">Multi-tiered role permissions: Administrator oversight, Manager incident reporting, and Employee self-service portals.</li>
+              <li data-i18n="modal_sanction_bullet2">Formal disciplinary hearings scheduler with document/evidence attachments and appeal tracking.</li>
+              <li data-i18n="modal_sanction_bullet3">Detailed audit trail, penalty metrics, and HR compliance analytics dashboard.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
+            <img src="assets/img/hr_sanction.png" alt="HR Sanctions Management Dashboard"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">RBAC Permissions</span>
+              <span class="tech-tag">Hearing Scheduler</span>
+              <span class="tech-tag">Evidence Uploads</span>
+              <span class="tech-tag">Audit Trail</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tiam HND Examination Hub Modal -->
+  <div class="modal-overlay" id="tiam-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="modal_title_featured">Featured Project</span>
+          <h2 data-i18n="proj_tiam_title"> HND Examination Hub</h2>
+          <div class="modal-company" data-i18n="proj_tiam_category">EdTech & Exam Hub</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_overview">Overview & Purpose</h4>
+            <p data-i18n="modal_tiam_overview">An academic exam preparation and student resource portal designed to help Cameroonian higher-education students excel in national Higher National Diploma (HND) exams.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_features">Key Features</h4>
+            <ul>
+              <li data-i18n="modal_tiam_bullet1">Downloadable past examination papers categorized by academic year and specialty (Software Engineering, Telecom, Accounting).</li>
+              <li data-i18n="modal_tiam_bullet2">Interactive online timed quiz engine with instant scoring, answer explanations, and performance metrics.</li>
+              <li data-i18n="modal_tiam_bullet3">Community peer-to-peer discussion forum, study notes sharing, and subscription access management.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
+            <img src="assets/img/tiam_hnd.png" alt=" HND Examination Hub Screenshot"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">PHP (PDO)</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Timed Quiz Engine</span>
+              <span class="tech-tag">Secure PDF Downloads</span>
+              <span class="tech-tag">Discussion Forum</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TourExplore Cameroon Travel App Modal -->
+  <div class="modal-overlay" id="tour-modal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content">
+        <div class="modal-header-info">
+          <span class="modal-date" data-i18n="modal_title_featured">Featured Project</span>
+          <h2 data-i18n="proj_tour_title">TourExplore - Cameroon Tourism</h2>
+          <div class="modal-company" data-i18n="proj_tour_category">Cross-Platform Mobile App</div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h4 data-i18n="modal_section_overview">Overview & Purpose</h4>
+            <p data-i18n="modal_tour_overview">A cross-platform mobile and web application built with Capacitor and Firebase that promotes tourism across Cameroon by offering digital travel guidebooks, road maps, and cultural exploration.</p>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_features">Key Features</h4>
+            <ul>
+              <li data-i18n="modal_tour_bullet1">Frictionless direct WhatsApp ordering system: generates pre-populated booking details without requiring mandatory registration.</li>
+              <li data-i18n="modal_tour_bullet2">Real-time synchronization using Firebase Firestore and push alerts via Firebase Cloud Messaging (FCM).</li>
+              <li data-i18n="modal_tour_bullet3">Mobile Money payments integration (MTN MoMo & Orange Money) with offline caching and bilingual support.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_screenshot">Project Screenshot</h4>
+            <img src="assets/img/tourexplore.png" alt="TourExplore Mobile App Screenshot"
+              style="width:100%; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border-glass);">
+          </div>
+          <div>
+            <h4 data-i18n="modal_section_tech_stack">Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Capacitor</span>
+              <span class="tech-tag">Android & iOS</span>
+              <span class="tech-tag">Firebase Firestore</span>
+              <span class="tech-tag">Firebase Cloud Messaging (FCM)</span>
+              <span class="tech-tag">WhatsApp API</span>
+              <span class="tech-tag">MTN MoMo & Orange Money</span>
             </div>
           </div>
         </div>
@@ -672,6 +1230,21 @@
       </ul>
     </div>
   </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="portfolio-lightbox">
+    <div class="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close-btn" type="button" aria-label="Close lightbox"><i class="fa-solid fa-xmark"></i></button>
+      <img id="lightbox-img" src="" alt="Full view screenshot">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top" aria-label="Back to Top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- Translation Dictionary -->
   <script src="js/translations.js"></script>
